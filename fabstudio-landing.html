@@ -2074,34 +2074,22 @@
     // ============================================================
     // NAVBAR LIQUID GLASS SCROLL BEHAVIOR
     // ============================================================
-  let lastScroll = 0;
   const navbar = document.getElementById('navbar');
   const compactNavQuery = window.matchMedia('(max-width: 1024px)');
+
+  navbar.style.transform = 'translateY(0)';
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
 
-      // Add scrolled class for enhanced glassmorphism
+      // Keep the header visible and only increase contrast after scrolling.
       if (currentScroll > 80) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
 
-      // Hide on scroll down, show on scroll up
-      if (compactNavQuery.matches) {
-        navbar.style.transform = 'translateY(0)';
-        lastScroll = currentScroll;
-        return;
-      }
-
-      if (currentScroll > lastScroll && currentScroll > 200) {
-        navbar.style.transform = 'translateY(-110%)';
-      } else {
-        navbar.style.transform = 'translateY(0)';
-      }
-
-      lastScroll = currentScroll;
+      navbar.style.transform = 'translateY(0)';
     });
 
   // ============================================================
