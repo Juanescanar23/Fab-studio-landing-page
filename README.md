@@ -5,6 +5,7 @@ Landing page estática para FAB STUDIO, centrada en arquitectura, identidad visu
 ## Archivo principal
 
 - `fabstudio-landing.html`
+- `vercel.json`: enruta `/` en Vercel hacia la landing principal
 
 ## Contenido del repositorio
 
