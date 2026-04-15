@@ -1193,8 +1193,8 @@
     }
 
     .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ============================================================
@@ -1909,28 +1909,41 @@
     });
 
     // Fade up elements
-    gsap.utils.toArray('.fade-up').forEach(el => {
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 88%',
-        },
+    gsap.utils
+      .toArray('.fade-up')
+      .filter(el => !el.classList.contains('about-heading') && !el.classList.contains('process-step'))
+      .forEach(el => {
+        gsap.fromTo(el, {
+          opacity: 0,
+          y: 40,
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            once: true,
+          },
+        });
       });
-    });
 
     // About heading reveal
-    gsap.from('.about-heading', {
+    gsap.fromTo('.about-heading', {
       opacity: 0,
       y: 60,
+    }, {
+      opacity: 1,
+      y: 0,
       duration: 1.2,
       ease: 'power3.out',
+      immediateRender: false,
       scrollTrigger: {
         trigger: '.about-heading',
         start: 'top 85%',
+        once: true,
       },
     });
 
