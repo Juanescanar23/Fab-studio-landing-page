@@ -1888,13 +1888,10 @@
       delay: 1.2,
     });
 
-    // Nav
-    gsap.from('nav', {
-      opacity: 0,
-      y: -20,
-      duration: 0.8,
-      ease: 'power3.out',
-      delay: 0.5,
+    // Keep the primary navigation visible at all times.
+    gsap.set('nav', {
+      opacity: 1,
+      y: 0,
     });
 
     // Hero parallax
