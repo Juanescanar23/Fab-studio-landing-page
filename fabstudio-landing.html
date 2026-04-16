@@ -213,6 +213,10 @@
     }
 
     @media (hover: none), (pointer: coarse) {
+      html {
+        scroll-behavior: auto;
+      }
+
       body {
         cursor: auto;
       }
@@ -2133,7 +2137,7 @@
       }
 
       .h-scroll-track .project-card {
-        height: min(68vh, 430px);
+        height: clamp(320px, 96vw, 430px);
       }
 
       .project-card-tag {
@@ -2315,7 +2319,7 @@
       }
 
       .h-scroll-track .project-card {
-        height: min(62vh, 380px);
+        height: clamp(280px, 102vw, 380px);
       }
 
       .project-card-name {
@@ -2667,6 +2671,7 @@
   // GSAP + ANIME.JS + MOTION
   // ============================================================
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   // ---- Cursor ----
   const cursor = document.getElementById('cursor');
