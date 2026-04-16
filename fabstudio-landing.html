@@ -156,6 +156,14 @@
       text-wrap: balance;
     }
 
+    .responsive-line-desktop {
+      display: block;
+    }
+
+    .responsive-line-mobile {
+      display: none;
+    }
+
     body.menu-open {
       overflow: hidden;
     }
@@ -889,7 +897,7 @@
     .about {
       padding: 10rem 3.5rem;
       display: grid;
-      grid-template-columns: minmax(18rem, 27rem) minmax(26rem, 40rem);
+      grid-template-columns: minmax(18rem, 28.5rem) minmax(26rem, 40rem);
       justify-content: center;
       gap: clamp(4.5rem, 7vw, 7.5rem);
       align-items: start;
@@ -898,7 +906,7 @@
 
     .about-left {
       position: relative;
-      max-width: 27rem;
+      max-width: 28.5rem;
     }
 
     .section-tag {
@@ -924,17 +932,24 @@
 
     .about-heading {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 3.45vw, 3.95rem);
+      font-size: clamp(2.2rem, 3.35vw, 3.8rem);
       font-weight: 300;
       line-height: 1.02;
       letter-spacing: -0.02em;
       color: var(--color-ink);
-      max-width: 7.5ch;
+      max-width: none;
     }
 
     .about-heading em {
       font-style: italic;
       color: var(--color-quick);
+    }
+
+    .about-heading .responsive-line-desktop,
+    .about-heading .responsive-line-mobile,
+    .contact-heading .responsive-line-desktop,
+    .contact-heading .responsive-line-mobile {
+      white-space: nowrap;
     }
 
     .about-right {
@@ -2088,6 +2103,10 @@
         max-width: 17rem;
       }
 
+      .hero-label .hero-label-detail {
+        display: none;
+      }
+
       .hero-spectrum {
         top: auto;
         right: 1rem;
@@ -2116,7 +2135,9 @@
       }
 
       .about-heading {
-        max-width: 8ch;
+        max-width: none;
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 0.98;
       }
 
       .about-body {
@@ -2182,9 +2203,10 @@
       }
 
       .process-heading {
-        white-space: normal;
-        width: auto;
-        max-width: 11ch;
+        font-size: clamp(1.8rem, 7vw, 2.35rem);
+        white-space: nowrap;
+        width: max-content;
+        max-width: none;
         margin-bottom: 3rem;
       }
 
@@ -2240,8 +2262,9 @@
       }
 
       .contact-heading {
-        max-width: 8ch;
-        line-height: 1.03;
+        max-width: none;
+        font-size: clamp(2.15rem, 9vw, 3.1rem);
+        line-height: 1.01;
       }
 
       .contact-body {
@@ -2302,6 +2325,14 @@
       .whatsapp-float svg {
         width: 1.28rem;
         height: 1.28rem;
+      }
+
+      .responsive-line-desktop {
+        display: none;
+      }
+
+      .responsive-line-mobile {
+        display: block;
       }
     }
 
@@ -2434,7 +2465,7 @@
     </div>
 
     <div class="hero-content">
-      <p class="hero-label"><span>Popayán, Cauca · Arquitectura bioclimática</span></p>
+      <p class="hero-label"><span>Popayán, Cauca<span class="hero-label-detail"> · Arquitectura bioclimática</span></span></p>
       <h1 class="hero-title">
         <span class="line"><span>Arquitectura</span></span>
         <span class="line"><span><em>que dialoga</em></span></span>
@@ -2485,9 +2516,11 @@
     <div class="about-left">
       <div class="section-tag">Nosotros</div>
       <h2 class="about-heading fade-up">
-        Diseñamos<br />
-        espacios con<br />
-        <em>propósito</em>
+        <span class="responsive-line-desktop">Diseñamos</span>
+        <span class="responsive-line-desktop">espacios con</span>
+        <span class="responsive-line-desktop"><em>propósito</em></span>
+        <span class="responsive-line-mobile">Diseñamos espacios</span>
+        <span class="responsive-line-mobile">con <em>propósito</em></span>
       </h2>
     </div>
     <div class="about-right">
@@ -2624,9 +2657,12 @@
   <section class="contact" id="contact">
     <div class="contact-left">
       <h2 class="contact-heading">
-        Hagamos algo<br />
-        <em>extraordinario</em><br />
-        juntos
+        <span class="responsive-line-desktop">Hagamos algo</span>
+        <span class="responsive-line-desktop"><em>extraordinario</em></span>
+        <span class="responsive-line-desktop">juntos</span>
+        <span class="responsive-line-mobile">Hagamos algo</span>
+        <span class="responsive-line-mobile"><em>extraordinario</em></span>
+        <span class="responsive-line-mobile">juntos</span>
       </h2>
       <p class="contact-body">
         Cuéntanos tu proyecto. Nos encanta escuchar antes de diseñar. Cada conversación es el inicio de una arquitectura que respira.
