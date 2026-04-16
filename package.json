@@ -1,0 +1,12 @@
+{
+  "name": "fab-studio-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page estática de FAB STUDIO",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "animejs": "^4.3.6",
+    "gsap": "^3.15.0",
+    "motion": "^12.38.0"
+  }
+}
