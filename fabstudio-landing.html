@@ -889,16 +889,16 @@
     .about {
       padding: 10rem 3.5rem;
       display: grid;
-      grid-template-columns: minmax(20rem, 32rem) minmax(24rem, 39rem);
+      grid-template-columns: minmax(18rem, 27rem) minmax(26rem, 40rem);
       justify-content: center;
-      gap: clamp(2.75rem, 4.5vw, 5.5rem);
+      gap: clamp(4.5rem, 7vw, 7.5rem);
       align-items: start;
       background: linear-gradient(180deg, rgba(203, 203, 203, 0.2) 0%, rgba(255, 255, 255, 0) 24%);
     }
 
     .about-left {
       position: relative;
-      max-width: 32rem;
+      max-width: 27rem;
     }
 
     .section-tag {
@@ -924,13 +924,12 @@
 
     .about-heading {
       font-family: var(--font-display);
-      font-size: clamp(2.35rem, 3.8vw, 4.3rem);
+      font-size: clamp(2.2rem, 3.45vw, 3.95rem);
       font-weight: 300;
       line-height: 1.02;
       letter-spacing: -0.02em;
       color: var(--color-ink);
-      width: max-content;
-      max-width: none;
+      max-width: 7.5ch;
     }
 
     .about-heading em {
@@ -942,7 +941,9 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      width: min(100%, 40rem);
       max-width: 40rem;
+      justify-self: start;
     }
 
     .about-body {
@@ -950,13 +951,15 @@
       line-height: 1.8;
       color: rgba(19, 17, 16, 0.72);
       font-weight: 400;
-      max-width: 36rem;
+      width: 100%;
+      max-width: none;
     }
 
     .about-values {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.9rem 1rem;
+      width: 100%;
     }
 
     .value-item {
@@ -1795,6 +1798,14 @@
         padding: 7rem 2rem;
       }
 
+      .about-left {
+        max-width: none;
+      }
+
+      .about-right {
+        width: min(100%, 42rem);
+      }
+
       .projects-header {
         padding: 5rem 2rem 2rem;
         flex-direction: column;
@@ -2105,7 +2116,7 @@
       }
 
       .about-heading {
-        max-width: 9ch;
+        max-width: 8ch;
       }
 
       .about-body {
@@ -2474,8 +2485,9 @@
     <div class="about-left">
       <div class="section-tag">Nosotros</div>
       <h2 class="about-heading fade-up">
-        Diseñamos espacios<br />
-        con <em>propósito</em>
+        Diseñamos<br />
+        espacios con<br />
+        <em>propósito</em>
       </h2>
     </div>
     <div class="about-right">
@@ -2627,7 +2639,7 @@
       </div>
       <div class="contact-info-row">
         <span class="contact-info-label">Teléfono</span>
-        <a href="tel:+573001234567" class="contact-info-value">+57 300 123 4567</a>
+        <a href="tel:+573168794685" class="contact-info-value">+57 316 879 4685</a>
       </div>
       <div class="contact-info-row">
         <span class="contact-info-label">Ubicación</span>
