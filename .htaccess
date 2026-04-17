@@ -1,0 +1,33 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTP_HOST} ^www\.fabstudio\.com\.co$ [NC]
+  RewriteRule ^ https://fabstudio.com.co%{REQUEST_URI} [R=301,L]
+
+  RewriteRule ^index\.php$ / [R=301,L,NC]
+  RewriteRule ^wp-admin(?:/.*)?$ / [R=301,L,NC]
+  RewriteRule ^wp-content(?:/.*)?$ / [R=301,L,NC]
+  RewriteRule ^wp-includes(?:/.*)?$ / [R=301,L,NC]
+  RewriteRule ^wp-json(?:/.*)?$ / [R=301,L,NC]
+  RewriteRule ^wp-login\.php$ / [R=301,L,NC]
+  RewriteRule ^xmlrpc\.php$ / [R=301,L,NC]
+  RewriteRule ^feed/?$ / [R=301,L,NC]
+
+  RewriteCond %{QUERY_STRING} (^|&)(p|page_id|attachment_id)=[0-9]+(&|$) [NC]
+  RewriteRule ^$ /? [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "^(index\.html)?$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  <FilesMatch "\.(?:png|jpg|jpeg|webp|svg|ico|js|css)$">
+    Header set Cache-Control "public, max-age=604800, immutable"
+  </FilesMatch>
+</IfModule>
